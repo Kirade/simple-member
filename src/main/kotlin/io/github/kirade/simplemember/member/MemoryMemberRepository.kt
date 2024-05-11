@@ -1,5 +1,8 @@
 package io.github.kirade.simplemember.member
 
+import org.springframework.stereotype.Component
+
+@Component
 class MemoryMemberRepository: MemberRepository {
 
     companion object {
