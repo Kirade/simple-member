@@ -15,5 +15,3 @@ class SingletonService private constructor(){
         println("싱글턴 객체 로직 호출")
     }
 }
-
-object SingletonServiceObject {}

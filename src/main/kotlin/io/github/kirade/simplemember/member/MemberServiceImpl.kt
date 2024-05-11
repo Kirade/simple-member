@@ -9,4 +9,9 @@ class MemberServiceImpl(private val memberRepository: MemberRepository): MemberS
     override fun findMember(memberId: Long): Member? {
         return memberRepository.findById(memberId)
     }
+
+    // 테스트 용도
+    fun getMemberRepository(): MemberRepository {
+        return memberRepository
+    }
 }

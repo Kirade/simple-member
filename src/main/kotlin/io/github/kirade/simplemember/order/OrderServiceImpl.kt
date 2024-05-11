@@ -12,4 +12,8 @@ class OrderServiceImpl(private val memberRepository: MemberRepository, private v
 
         return Order(memberId, itemName, itemPrice, discountPrice)
     }
+
+    fun getMemberRepository(): MemberRepository {
+        return memberRepository
+    }
 }
