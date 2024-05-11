@@ -1,9 +1,6 @@
 package io.github.kirade.simplemember.member
 
-class MemberServiceImpl: MemberService {
-
-    // DIP 위반 -> 구현에 의존
-    private val memberRepository: MemberRepository = MemoryMemberRepository()
+class MemberServiceImpl(private val memberRepository: MemberRepository): MemberService {
 
     override fun join(member: Member) {
         memberRepository.save(member)
