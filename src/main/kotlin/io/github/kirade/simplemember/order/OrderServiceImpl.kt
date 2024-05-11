@@ -1,5 +1,6 @@
 package io.github.kirade.simplemember.order
 
+import io.github.kirade.simplemember.annotation.MainDiscountPolicy
 import io.github.kirade.simplemember.discount.DiscountPolicy
 import io.github.kirade.simplemember.member.MemberRepository
 import org.springframework.stereotype.Component
@@ -9,7 +10,7 @@ import java.lang.IllegalStateException
 @Component
 class OrderServiceImpl(
     private val memberRepository: MemberRepository,
-    private val discountPolicy: DiscountPolicy
+    @MainDiscountPolicy private val discountPolicy: DiscountPolicy
 ): OrderService {
 
     override fun createOrder(memberId: Long, itemName: String, itemPrice: Int): Order {
