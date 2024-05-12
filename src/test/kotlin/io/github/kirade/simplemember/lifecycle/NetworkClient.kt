@@ -15,15 +15,15 @@ class NetworkClient: InitializingBean, DisposableBean {
         this.url = url
     }
 
-    fun connect() {
+    private fun connect() {
         println("connect: $url")
     }
 
-    fun call(message: String) {
+    private fun call(message: String) {
         println("call: $url, message: $message")
     }
 
-    fun disconnect() {
+    private fun disconnect() {
         println("close: $url")
     }
 
