@@ -1,6 +1,5 @@
 package io.github.kirade.simplemember.scope
 
-import io.github.kirade.simplemember.scope.SingletonTest.SingletonBean
 import jakarta.annotation.PostConstruct
 import jakarta.annotation.PreDestroy
 import org.assertj.core.api.Assertions.assertThat

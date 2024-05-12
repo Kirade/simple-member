@@ -2,19 +2,19 @@ package io.github.kirade.simplemember.scope
 
 import jakarta.annotation.PostConstruct
 import jakarta.annotation.PreDestroy
+import jakarta.inject.Provider
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
-import org.springframework.beans.factory.ObjectProvider
 import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.annotation.Scope
 
 class SingletonWithPrototypeTest1 {
 
     @Scope("singleton")
-    class ClientBean(private val prototypeBeanProvider: ObjectProvider<PrototypeBean>) {
+    class ClientBean(private val prototypeBeanProvider: Provider<PrototypeBean>) {
 
         fun logic(): Int{
-            val prototypeBean = prototypeBeanProvider.getObject()
+            val prototypeBean = prototypeBeanProvider.get()
             prototypeBean.addCount()
             return prototypeBean.count
         }
