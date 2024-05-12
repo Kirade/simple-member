@@ -1,5 +1,7 @@
 package io.github.kirade.simplemember.lifecycle
 
+import jakarta.annotation.PostConstruct
+import jakarta.annotation.PreDestroy
 
 class NetworkClient {
 
@@ -25,11 +27,13 @@ class NetworkClient {
         println("close: $url")
     }
 
+    @PostConstruct
     fun init() {
         connect()
         call("초기화 연결 메시지")
     }
 
+    @PreDestroy
     fun close() {
         disconnect()
     }
