@@ -1,9 +1,7 @@
 package io.github.kirade.simplemember.lifecycle
 
-import org.springframework.beans.factory.DisposableBean
-import org.springframework.beans.factory.InitializingBean
 
-class NetworkClient: InitializingBean, DisposableBean {
+class NetworkClient {
 
     private var url: String? = null
 
@@ -27,12 +25,12 @@ class NetworkClient: InitializingBean, DisposableBean {
         println("close: $url")
     }
 
-    override fun afterPropertiesSet() {
+    fun init() {
         connect()
         call("초기화 연결 메시지")
     }
 
-    override fun destroy() {
+    fun close() {
         disconnect()
     }
 }
