@@ -5,5 +5,7 @@
 - 싱글턴 컨테이너 ( Singleton Pattern, @Configuration )
 - 컴포넌트 스캔 ( @ComponentScan )
 - 의존관계 자동주입 ( @Autowired, lombok, @Qualifier, @Primary )
+- 빈 생명주기와 콜백 ( 인터페이스 활용, @Bean 의 메서드 활용, @PostConstruct, @PreDestroy )
+- 빈 스코프 ( 싱글턴, 포로토 타입, 웹 스코프, Provider, Proxy )
 
-기간: 2023.05.07 ~ 
+기간: 2023.05.07 ~ 2023.05.13
